@@ -1,16 +1,9 @@
-In this project I have made simple trojan horse using Java ,SQL and P2P. I have managed to overcome windows security because of flaw in the firewall which allows outgoing connections all the time but not ingoing and I manged to overcome this issue 
-bu using SQL which for  some reason is allowed as ingoing connection and the application jjust checks for changes in the SQL database after the change is made which is the command it processes it and sends the data to the hacker.
+This project is a Java-based remote administration experiment designed to explore network communication, system control, and firewall behavior. The system uses Java, SQL, and a peer-to-peer communication approach to allow a server application to send commands to connected client machines through a database-based messaging mechanism.
 
-The project includes 3 different files:
-Server-This is the app that the hacker is going to work with
-Client-This is the app which will be executed on the victims computer.
-Config-This is the app which will bound the 2 above together.
+The project consists of three main components. The Server application is used to manage connected clients and send commands. The Client application runs on the target machine and listens for commands by monitoring changes in the SQL database. The Config application is used to configure and connect the server and client components.
 
-In the RAT there are several main functionalities:
-1-See all infected computers by your RAT(That means my Server app which can be bounded to multiple Client apps)
-2-See all files and directories on the victims computer
-3-Download files from the victims computer
+Communication between the server and client is implemented through an SQL database. The client periodically checks the database for command updates. When a change is detected, the client processes the command and returns the requested information back through the database. This approach was implemented to study firewall behavior where outgoing connections are generally allowed while incoming connections are restricted.
 
-This is for now in the short future I may upload and the database(not because I am too lazy too recover it!!).
+The system supports several core features. The server can display all connected client machines, browse files and directories on the client system, and download files from the client computer.
 
-The only thing I forgot to mention is that you need to have running server for the database.
+The project requires a running database server in order to function. The database acts as the communication layer between the server and client applications.
